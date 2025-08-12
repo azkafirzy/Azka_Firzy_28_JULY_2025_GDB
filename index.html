@@ -1,20 +1,89 @@
-
-<!DOCTYPE html>
+<DOCTYPE html>
 <html>
     <head>
-         <h1 style=“text-align: center”>Login</h1>
+        <title>Login</title>
+        <style>
+            body {
+                font-family: Roboto, Sans-Serif;
+                background-color: #f4f4f9;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            } 
+            
+            .Login-container {
+                background-color: white;
+                padding: 30px; 
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                text-align: center;
+            }
+            
+            h1 {
+                color: #333;
+                margin-bottom: 20px;
+            }
+            
+            input {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+            
+            button {
+                width: 100%;
+                padding: 10px;
+                color: green;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            
+            button:hover {
+                background-color: #45a049;
+              }
+              .error{
+                  color: 12px;
+              }
+             </style>
     </head>
     <body>
-       <div>
-          <form>
-        <input type=“text” placeholder=“Masukan Username” style=“width: 100%; padding: 10px; margin: 10px; text- align: center” required /> <br />
-        <input type=“password” placeholder=“Masukan Password” style=“width: 100%; padding: 10px; margin: 10px;
-    text-align: center” required />
-        <button type=“submit” style=“background-color: #5c9ded; padding: 10px; margin: 10px; width: 100%”>Login</
-      button><br />
-        <p style=“text-align: center”>Belum punya akun ? <a class=“” href=“#” style=“text-align: center”>Daftar
-akun</a></p>
-          </form>
-       </div>
-    </body>
- </html>
+        <div class="Login-container">
+            <h1>Login</h1>
+            <form id="login form akun">
+                <input type="text" id="Username" placeholder="Masukan Username" />
+                <input type="password" id="pasword" placeholder="Masukan password" />
+                <button type="submit">Login</button>
+                <div id="error-message" class="error"></div>
+                <p>Belum punya akun? <a href="#">Daftar akun</a></p>
+               </form>
+        </div>
+<script> 
+    document.getElementById('login form akun').addEventListener ('submit', function(event) {
+    event.preventDefault();
+    
+    
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var errormessage = document.getElementById('errormessage');
+    
+    if (username === '' || password === ''){
+        errorMessage.textContent = 'GABOLEH KOSONG WOY';
+    } else if (username !== 'Firzy' || password !=='123') {
+        errorMessage.textContent = 'username atau password salah';
+    } else {
+        errorMessage.textContent = ''
+        alert('sukses login');
+    }
+    
+    });
+</script>
+</body>
+</html>
